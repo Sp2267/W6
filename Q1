@@ -1,0 +1,51 @@
+# include<iostream>
+
+using namespace std;
+
+class A{
+public:
+    int base;
+
+    int getbase( int b) {
+    base = b;
+    }
+
+
+};
+
+class B{
+public:
+    int height;
+
+    int getheight(int h) {
+    height = h;
+    }
+
+};
+
+class c : public A,public B {
+public:
+
+
+
+
+int display()  {
+    int area = 0.5*base*height;
+cout<<area;
+}
+
+};
+
+int main()  {
+
+c t1;
+
+t1.getbase(4);
+
+
+t1.getheight(4);
+
+t1.display();
+
+return 0;
+}
