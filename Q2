@@ -1,0 +1,78 @@
+# include<iostream>
+# include<string>
+
+
+using namespace std;
+
+class studentdetails {
+public:
+
+string name;
+long long enrollmentNo;
+
+void getDetails(string n, long long enroll) {
+
+name = n;
+enrollmentNo = enroll;
+}
+};
+
+class marks {
+public:
+
+int mark[5];
+
+void getmarks() {
+int m[5];
+for(int i = 0; i<5;i++) {
+    cout<<"Enter the mark of subject"<<i<<endl;
+    cin>>m[i];
+    mark[i] = m[i];
+}
+
+}
+
+};
+
+class c : public studentdetails,public marks {
+public:
+    int sum = 0;
+    int total() {
+    for(int i = 0;i<5;i++)  {
+        sum = sum + mark[i];
+    }
+    cout<<sum<<endl;
+    }
+
+    void display()  {
+        cout<<name<<endl;
+        cout<<enrollmentNo<<endl;
+
+        for(int i = 1; i<=5;i++) {
+    cout<<"the mark of subject "<<i<<" = "<<mark[i-1]<<endl;
+
+}
+
+
+    }
+
+};
+
+int main()  {
+
+c s1;
+
+cout<<"Enter the name of student"<<endl;
+string s;
+cin>>s;
+
+cout<<"Enter the enrollment number "<<endl;
+long long e;
+cin>>e;
+
+s1.getDetails(s,e);
+s1.getmarks();
+s1.display();
+s1.total();
+return 0;
+}
